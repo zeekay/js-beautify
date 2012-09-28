@@ -808,8 +808,9 @@ function js_beautify(js_source_text, options) {
             if (is_special_word(last_text)) {
                 print_single_space();
             } else if (last_text === ')') {
-                flags.chain_extra_indentation = 1;
-                print_newline(true /* ignore_repeated */, false /* reset_statement_flags */);
+                // Do not put chained function calls on new lines
+                // flags.chain_extra_indentation = 1;
+                // print_newline(true /* ignore_repeated */, false /* reset_statement_flags */);
             }
 
             print_token();
